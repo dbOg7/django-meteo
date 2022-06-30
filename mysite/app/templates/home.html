@@ -2,16 +2,24 @@
 {% load static %}
 
 {% block content %}
-<h1>hello world!</h1>
+<h1>Weather forecast</h1>
 
-<div>
-    <p>
-        <span>{{weather.city}}</span><br>
-        <span>{{weather.temperature}} °C</span><br>
-        <span>{{weather.description}}</span> <br>
-            
-    </p>
-</div>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="name"></label>
+    <input type="text" name="name" id="name" placeholder="Enter your city">
+    <input type="submit" value="submit">
+</form>
+
+
+{%for city in weather_data %}
+    <ul>
+        <li>{{city.city}}</li>
+        <li>{{city.temperature}}<span>°C</span></li>
+        <li>{{city.description}}</li>
+    </ul>
+{% endfor %}
+
 
 
 {% endblock %}
