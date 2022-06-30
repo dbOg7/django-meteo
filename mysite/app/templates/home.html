@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block content %}
+<h1>hello world!</h1>
+
+<div>
+    <p>
+        <span>{{weather.city}}</span><br>
+        <span>{{weather.temperature}} °C</span><br>
+        <span>{{weather.description}}</span> <br>
+            
+    </p>
+</div>
+
+
+{% endblock %}
